@@ -38,6 +38,35 @@ const myfun =function(){
     
 }
 
-console.log(typeof BigNumber);  //bigint
-console.log(typeof heroes);   // object 
-console.log(typeof id);  //symbol
+// console.log(typeof BigNumber);  //bigint
+// console.log(typeof heroes);   // object 
+// console.log(typeof id);  //symbol
+
+// ***********************************************************************************************
+
+// stack memory (Primitive)    ,Heap(non_primitive)
+
+
+
+let codername="gajanan.com"
+
+let anothername=codername
+
+anothername="chai aur gajanan"
+
+// console.log(anothername);
+// console.log(codername);     // gajanan.com   in stack we get the copy of memory 
+
+
+let userone= {
+
+    email:"gajubhaigmail.com",
+    upi:"gajoksib@"
+}
+
+let usertwo=userone   // this creates a reference into heap from stack from multiples primitive datatypes like userone and usertwo
+
+usertwo.email="gaju02@gmail.com"
+
+console.log(userone.email);  // give same output
+console.log(usertwo.email);
