@@ -1,3 +1,5 @@
+// node 01basics/3conversionop.js
+
 let score="33"
 
 // console.log(typeof score);
@@ -13,6 +15,17 @@ let letlogin= Boolean(logined)
 
 let somenum=23;
 let somestring=String(somenum)
-console.log(somenum)
-console.log(typeof somestring);
+// console.log(somenum)
+// console.log(typeof somestring);
 
+
+// console.log("2">1)
+// console.log(null>=0);   //true     // null is converted to zero number by javascript
+// console.log(null>0);        //false
+// console.log(null==0);       //false
+
+// console.log(undefined==0);      //all cases >= <= == gives as false
+
+console.log(0=="0"===0)//  false  because === checks the datatype also 
+
+// ***************so we should avoid these operations to avoid confusion***********
