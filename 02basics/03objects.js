@@ -20,20 +20,19 @@ holiday:["sun","mod"]
 
 }
 
-// console.log(jsuser.name);
+ console.log(jsuser.name);
+ console.log(jsuser["fullname"]);
 
-// console.log(jsuser["fullname"]);
+ console.log(typeof jsuser.mysym);  // the symbol we created is actually used as string
 
-// console.log(typeof jsuser.mysym);  // the symbol we created is actually used as string
-
-// console.log(jsuser[mysym]);//mykey1
-// console.log(typeof mysym);    // symbol 
+ console.log(jsuser[mysym]);//mykey1
+ console.log(typeof mysym);    // symbol 
 
 // jsuser.email="gajanan02gpt.com"
 // Object.freeze(jsuser)   // freezed and cannot change after values in object
 // jsuser.email="gaj003mail.com"  
 
-// console.log(jsuser.email);  //gajanan02gpt.com
+console.log(jsuser.email);  //gajanan02gpt.com
 
 jsuser.greet= function ()
 {
