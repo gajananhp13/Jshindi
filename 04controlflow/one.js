@@ -4,10 +4,10 @@
    
 // }
 const temp=23
-if(temp<=41){
+if(temp>21){
     console.log("less than 50")
 }
-else{
+else if(true){
     console.log("greater than 50")
 }
 
