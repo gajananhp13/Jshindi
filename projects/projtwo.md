@@ -1,9 +1,9 @@
-# project of dom 
+# project of dom BMI calculator 
 
 ## project link
 [click here bhai ](https://stackblitz.com/edit/dom-project-chaiaurcode-ebzt6omq?file=2-BMICalculator%2Findex.html,2-BMICalculator%2Fstyle.css,2-BMICalculator%2Fchaiaurcode.js )
 
-solution of javascript
+solution :
 ``` javascript
 const form = document.querySelector('form');
 // this usecase will give you empty

@@ -1,4 +1,4 @@
-# project of dom 
+# project of dom  Digital clock
 
 ## project link
 [click here bhai ](https://stackblitz.com/edit/dom-project-chaiaurcode-ebzt6omq?file=3-DigitalClock%2Findex.html,3-DigitalClock%2Fchaiaurcode3.js    )

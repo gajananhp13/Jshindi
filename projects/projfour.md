@@ -1,15 +1,6 @@
-# project of dom  guess the number game
-
-## project link 
-[click here bhai ](  https://stackblitz.com/edit/dom-project-chaiaurcode-ebzt6omq?file=4-GuessTheNumber%2Findex.html,4-GuessTheNumber%2Fchaiaurcode.js    )
-
-solution of javascript
-``` javascript
 
 const randomnum = Math.round(Math.random() * 100 + 1);
 console.log(randomnum);
-
-
 const submit = document.querySelector('#subt');
 const userinput = document.querySelector('#guessField');
 const guessslot = document.querySelector('.guesses');
@@ -53,13 +44,14 @@ function validateguess(guess) {
 
 function checkguess(guess) {
   if (guess == randomnum) {
-    displaymessage('Yes, it is correct!');
-    endGame();
+    displaymessage('Yes, it is correct! 😊');
+   
   } else if (guess < randomnum) {
     displaymessage('Number is low');
+    
   } else {
     displaymessage('Number is high');
-    // endgame();
+    
   }
 }
 function displayguess(guess) {
@@ -71,7 +63,7 @@ function displayguess(guess) {
 }
 
 function displaymessage(message) {
-  loworhigh.innerHTML = `<h2>${message}</h2>`;
+  loworhigh.innerHTML = `<h2> correct val:${message}</h2>`;
 }
 
 function endgame() {
@@ -90,11 +82,10 @@ function newgame() {
     let prevguess = [];
     let numguess = 1;
     guessslot.innerHTML = ``;
-    remaining.innerHTML = `${11 - numguess}`;
+    remaining.innerHTML = `${10 - numguess}`;
 
     userinput.removeAttribute('disabled');
-    startover.removeChild(P);
+    startover.removeChild(p);
     playgame = true;
   });
 }
-
