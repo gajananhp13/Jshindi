@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" bgcolor="grey">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body >
+    <nav>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/page2.html" >Other page</a>
+    </nav>
+    <main>
+<style>
+  #images{
+  margin: 10px 0px 0px 10px;
+ width: 200px;
+display: flex;
+justify-content: center;
+  background-color:aqua
+}
+</style>
+      <div id="images" >
+
+
+      <img src="" alt="owl" id="owl">
+    
+      <a href=" https://www.google.co.in/" id='google'>google</a>
+
+    </div>
+      <h1 >Home page</h1>
+    </main>
+  </body>
+  <script>
+
+// type,timestamp,defaultprevented
+// target,toelement ,srcelement , current target 
+// clientx,client y,scrren x ,screeny,
+// keycodes,ctrlkey,altkey,shiftkey
+
+//______________________________bubbling -event propagation
+document.getElementById('owl').addEventListener('click', function (e) {
+  // alert('owlclick')
+  e.stopPropagation()   // because of this image clicked will not be consoled
+  console.log('owl clciked and also outer div element ');
+},false);
+//if false first owl clicked print then image clicked and if its true then itsvice versa 
+
+// so we use to prevent bubbling e.stopprogation
+
+
+
+document.getElementById('images').addEventListener('click', function (e) {
+  // alert('owlclick')
+  console.log('images clicked');
+  
+},false);
+// _______________________________________________
+
+
+document.getElementById('google').addEventListener('click', function (e) {
+  e.preventDefault()
+  e.stopPropagation()
+  console.log("google clicked")
+  console.log(e.target.parentNode) //HTMLAnchorElement == e.target
+ 
+ let it= e.target.parentNode
+//  it.remove()// removes parent node that is <div > from the page
+it.remove(e.target.parentNode.ChildNode)
+},false);
+ 
+
+
+
+//attach element()
+// jQuery -oneventlistener
+
+
+
+  </script>
+</html>
