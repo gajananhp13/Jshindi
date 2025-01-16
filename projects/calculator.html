@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #calculator {
+      width: 300px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="calculator">
+    <h1>Simple Calculator</h1>
+    <input type="text" id="display" readonly>
+    <br>
+    <button onclick="appendNumber('7')">7</button>
+    <button onclick="appendNumber('8')">8</button>
+    <button onclick="appendNumber('9')">9</button>
+    <button onclick="setOperator('/')">/</button><br>
+    <button onclick="appendNumber('4')">4</button>
+    <button onclick="appendNumber('5')">5</button>
+    <button onclick="appendNumber('6')">6</button>
+    <button onclick="setOperator('*')">*</button><br>
+    <button onclick="appendNumber('1')">1</button>
+    <button onclick="appendNumber('2')">2</button>
+    <button onclick="appendNumber('3')">3</button>
+    <button onclick="setOperator('-')">-</button><br>
+    <button onclick="appendNumber('0')">0</button>
+    <button onclick="appendNumber('.')">.</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="setOperator('+')">+</button>
+    <button onclick="clearDisplay()">C</button>
+  </div>
+
+  <script>
+    let currentInput = "";
+    let operator = null;
+    let previousInput = null;
+
+    function appendNumber(number) {
+      currentInput += number;
+      document.getElementById("display").value = currentInput;
+    }
+
+    function setOperator(op) {
+      if (currentInput !== "") {
+        previousInput = currentInput;
+        operator = op;
+        currentInput = "";
+      }
+    }
+
+    function calculate() {
+      if (previousInput !== null && operator !== null) {
+        switch (operator) {
+          case '+':
+            currentInput = parseFloat(previousInput) + parseFloat(currentInput);
+            break;
+          case '-':
+            currentInput = parseFloat(previousInput) - parseFloat(currentInput);
+            break;
+          case '*':
+            currentInput = parseFloat(previousInput) * parseFloat(currentInput);
+            break;
+          case '/':
+            if (currentInput === "0") {
+              currentInput = "Error";
+            } else {
+              currentInput = parseFloat(previousInput) / parseFloat(currentInput);
+            }
+            break;
+        }
+        operator = null;
+        previousInput = null;
+        document.getElementById("display").value = currentInput;
+      }
+    }
+
+    function clearDisplay() {
+      currentInput = "";
+      operator = null;
+      previousInput = null;
+      document.getElementById("display").value = "";
+    }
+  </script>
+
+</body>
+</html>
