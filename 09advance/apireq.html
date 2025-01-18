@@ -1,0 +1,40 @@
+<!-- javascript works on v8 engine made by c++ -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="#212121">
+    <p style="color: aliceblue;">
+
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+    </p>
+
+    <script>
+ const requestURl='https://api.github.com/users/gajananhp13'
+const xhr= new XMLHttpRequest();
+xhr.open('GET',requestURl)
+xhr.onreadystatechange=function(){
+    console.log(xhr.readyState);
+    if(xhr.readyState===4){
+        // console.log(this.responseText);// shows entire api data in json format
+        // const data=xhr.responseText; // also can use this for same context
+       const data=JSON.parse(xhr.responseText); // to convert json data into object
+        // console.log( typeof data);  // string response from url comes in string format
+        console.log(data.login);
+        console.log(data.avatar_url);
+
+    }
+}
+xhr.send()
+
+
+    </script>
+</body>
+</html>
